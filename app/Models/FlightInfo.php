@@ -6,6 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class FlightInfo extends Model
 {
+    protected $table = 'flight_info';
+
+    protected $primaryKey = 'aircraft_id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    
     protected $fillable = [
         'aircraft_id',
         'callsign',

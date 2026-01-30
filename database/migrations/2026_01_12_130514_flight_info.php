@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-         Schema::create('flights_info', function (Blueprint $table) {
+         Schema::create('flight_info', function (Blueprint $table) {
             $table->id();
-            $table->string('aircraft_id')->index();
+            $table->string('aircraft_id')->unique();
             $table->string('callsign')->nullable();
             $table->string('origin_country');
             $table->timestamp('time_position')->nullable();
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropsIfexists("flights_info");
+        Schema::dropsIfexists("flight_info");
     }
 };
